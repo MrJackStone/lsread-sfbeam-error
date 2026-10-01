@@ -1,0 +1,15 @@
+/BATCH  
+/COM,ANSYS RELEASE 2025 R1           BUILD 25.1      UP20241202       23:21:26
+/input,menust,tmp,''
+/GRA,POWER
+/GST,ON
+/PLO,INFO,3
+/GRO,CURL,ON
+/CPLANE,1   
+/REPLOT,RESIZE  
+WPSTYLE,,,,,,,,0
+/REPLOT,RESIZE  
+/INPUT,'sample_lsread_error','mac','C:\simulations\lsread-sfbeam-error\',, 0
+/COM,ANSYS RELEASE 2025 R1           BUILD 25.1      UP20241202       23:21:49
+FINISH  
+! /EXIT,ALL 

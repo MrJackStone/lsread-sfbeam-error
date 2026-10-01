@@ -1,0 +1,42 @@
+finish
+/clear
+/uis,msgpop,2  ! this command and KEYW,PR_SGUI,1 are issued only so that
+               ! the warning message is displayed at the end of execution
+
+/prep7
+et,1,188             ! geometry and mesh attributes don't seem to matter,
+et,2,181             ! all that is needed for the bug to manifest seems
+mp,ex,1,2e11         ! to be the presence of both SHELL elements (to which
+mp,prxy,1,0.3        ! a pressure is applied with SFE) and BEAM elements
+sectype,1,beam,rect  ! (to which a pressure is applied with SFBEAM). The
+secdata,0.2,0.2      ! order in which these elements are created matters,
+sectype,2,shell      ! as discussed below. When the right (or should it be
+secdata,0.05         ! wrong?) conditions are met, the load step file written
+k,1,0,0              ! with LSWRITE cannot be read by LSREAD. The lines
+k,2,1,0              ! corresponding to the SFBEAM command seem to not have
+k,3,1,1              ! the expected formatting and the read operation fails
+k,4,0,1              ! with the 'not a recognized command' warning message.
+a,1,2,3,4
+
+aatt,1,,2,,2    ! meshing areas before lines is required for this bug to manifest
+aesize,all,0.5  ! since the lower number elements appear first in the load step
+amesh,all       ! listing, making the lines corresponding to SFEBLOCK command
+                ! appear before those corresponding to SFBEAM command.
+
+latt,1,,1,,,,1  ! if this code block meshing lines is moved above the one meshing
+lesize,all,0.5  ! areas the bug no longer happens.
+lmesh,all
+
+dk,all,ux,0,,,uy,uz
+esel,s,ename,,188
+sfbeam,all,1,pres,404  ! the way SFBEAM command is transcribed to the load step
+esel,s,ename,,181      ! file is what actually causes the LSREAD error. Note that
+sfe,all,1,pres,,-941   ! the pressure value set here (404) is the one that appears
+allsel                 ! in the warning message.
+lswrite,1
+
+/solu           ! here LSSOLVE fails because it issues LSREAD internally, which reads
+antype,0        ! the (badly formatted?) .s01 load step file. The process is then
+keyw,pr_sgui,1  ! interrupted and solution is not performed. The same '404 is not a
+lssolve,1,1,1   ! recognized SOLUTION command' error can be reproduced simply by
+                ! issuing LSREAD,1
