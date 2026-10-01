@@ -13,3 +13,28 @@ WPSTYLE,,,,,,,,0
 /COM,ANSYS RELEASE 2025 R1           BUILD 25.1      UP20241202       23:21:49
 FINISH  
 ! /EXIT,ALL 
+/BATCH  
+/COM,ANSYS RELEASE 2025 R1           BUILD 25.1      UP20241202       13:02:24
+/input,menust,tmp,''
+/GRA,POWER
+/GST,ON
+/PLO,INFO,3
+/GRO,CURL,ON
+/CPLANE,1   
+/REPLOT,RESIZE  
+WPSTYLE,,,,,,,,0
+/REPLOT,RESIZE  
+_runme  
+/COM,ANSYS RELEASE 2025 R1           BUILD 25.1      UP20241202       13:05:48
+lsread,1
+allsel  
+FINISH  
+/PREP7  
+eplo
+FINISH  
+/SOL
+antype,0
+keyw,pr_sgui,1  
+lssolve,1,1,1   
+FINISH  
+! /EXIT,ALL 

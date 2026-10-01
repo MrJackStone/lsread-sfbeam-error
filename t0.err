@@ -9,3 +9,14 @@
  404.0000 is not a recognized SOLUTION command, abbreviation, or macro.  
                                                                          
   This command will be ignored.                                          
+/COM,ANSYS RELEASE 2025 R1           BUILD 25.1      UP20241202       13:01:57
+
+ *** WARNING ***                         CP =       3.609   TIME= 13:04:42
+ Both solid model and finite element model boundary conditions have been 
+ applied to this model.  As solid loads are transferred to the nodes or  
+ elements, they can overwrite directly applied loads.                    
+
+ *** WARNING ***                         CP =       3.688   TIME= 13:04:42
+ 404.0000 is not a recognized SOLUTION command, abbreviation, or macro.  
+                                                                         
+  This command will be ignored.                                          
