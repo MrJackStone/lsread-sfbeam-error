@@ -1,0 +1,21 @@
+/BATCH  
+/COM,ANSYS RELEASE 2019 R2           BUILD 19.4      UP20190416       10:59:16
+/input,menust,tmp,''
+/GRA,POWER
+/GST,ON
+/PLO,INFO,3
+/GRO,CURL,ON
+/CPLANE,1   
+/REPLOT,RESIZE  
+WPSTYLE,,,,,,,,0
+/REPLOT,RESIZE  
+/INPUT,'_runme','mac','D:\Ansys\_scratch\lsread-sfbeam-error\models\t1\',, 0
+/COM,ANSYS RELEASE 2019 R2           BUILD 19.4      UP20190416       10:59:34
+/USER,  1   
+/FOC,   1,  0.120450002611    ,  0.726000015736E-01,   0.00000000000
+/DIST, 1 ,1.082226,1
+/REP,FAST   
+/DIST, 1 ,1.082226,1
+/REP,FAST   
+FINISH  
+! /EXIT,ALL 

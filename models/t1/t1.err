@@ -1,0 +1,6 @@
+/COM,ANSYS RELEASE 2019 R2           BUILD 19.4      UP20190416       10:59:14
+
+ *** WARNING ***                         CP =       3.203   TIME= 10:59:23
+ Both solid model and finite element model boundary conditions have been 
+ applied to this model.  As solid loads are transferred to the nodes or  
+ elements, they can overwrite directly applied loads.                    
